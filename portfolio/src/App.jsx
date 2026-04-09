@@ -1,4 +1,5 @@
 import './App.css'
+import { Analytics } from '@vercel/analytics/react'
 import { motion } from 'motion/react'
 import Navbar from './components/Navbar'
 import LineWaves from './components/LineWaves'
@@ -47,6 +48,7 @@ function App() {
         <span>© {new Date().getFullYear()} Asante Boler</span>
         <a href="#hero">Back to top ↑</a>
       </footer>
+      <Analytics />
     </>
   )
 }
