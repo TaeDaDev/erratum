@@ -9,6 +9,8 @@
 :root {
   --bg: #1A1A1B;
   --text: #D7D7D7;
+  --accent: #4ADE80;
+  --accent-dim: rgba(74, 222, 128, 0.12);
   --font-sans: 'Manrope', sans-serif;
   --font-display: 'Bebas Neue', sans-serif;
 }

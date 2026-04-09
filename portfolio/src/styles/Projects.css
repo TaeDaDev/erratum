@@ -1,0 +1,73 @@
+.projects {
+  padding: 8rem 4rem;
+}
+
+.projects-inner {
+  max-width: 1000px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  border: 1px solid rgba(215, 215, 215, 0.1);
+  margin-top: 3rem;
+}
+
+.project-card {
+  padding: 2rem;
+  border: 1px solid rgba(215, 215, 215, 0.1);
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: background 0.2s;
+}
+
+.project-card:hover {
+  background: var(--accent-dim);
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.project-arrow {
+  opacity: 0.4;
+  font-size: 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.project-card:hover .project-arrow {
+  opacity: 1;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  opacity: 0.5;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.4;
+}

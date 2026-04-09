@@ -1,18 +1,28 @@
+import './App.css'
+import Navbar from './components/Navbar'
+import LineWaves from './components/LineWaves'
+import About from './components/About'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+
 function App() {
   return (
-    <main>
-  <section className="hero">
-      <div className="hero-text">
-        <h1>Hi, I'm Asante Boler</h1>
-        <p>Creative Developer</p>
-    </div>
-    <div className="hero-canvas">
-      {/* 3D will go here later */}
-    </div>
-  </section>
-</main>
-
-  );
+    <>
+      <Navbar />
+      <main>
+        <section id="hero" className="hero">
+          <LineWaves />
+          <div className="hero-text">
+            <h1>Asante Boler</h1>
+            <p>Creative Developer</p>
+          </div>
+        </section>
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+    </>
+  )
 }
 
-export default App;
+export default App
