@@ -43,6 +43,7 @@ export default function Contact() {
         >
           <a href="https://github.com/TaeDaDev" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/asante-boler-4356aa360/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         </motion.div>
       </div>
     </section>

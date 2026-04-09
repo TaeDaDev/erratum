@@ -53,3 +53,9 @@
 .contact-links a:hover {
   opacity: 1;
 }
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 6rem 1.5rem;
+  }
+}
