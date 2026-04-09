@@ -34,7 +34,7 @@ npm run build
 ```
 
 ## Contact
-
+- Website: [erratum](https://erratum-one.vercel.app/)
 - GitHub: [TaeDaDev](https://github.com/TaeDaDev)
 - LinkedIn: [Asante Boler](https://www.linkedin.com/in/asante-boler-4356aa360/)
 - Email: uhsaantae@gmail.com
