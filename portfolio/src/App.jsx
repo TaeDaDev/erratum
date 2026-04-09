@@ -1,5 +1,6 @@
 import './App.css'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { motion } from 'motion/react'
 import Navbar from './components/Navbar'
 import LineWaves from './components/LineWaves'
@@ -49,6 +50,7 @@ function App() {
         <a href="#hero">Back to top ↑</a>
       </footer>
       <Analytics />
+      <SpeedInsights />
     </>
   )
 }
