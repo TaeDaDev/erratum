@@ -27,13 +27,13 @@ export default function Contact() {
           Let's work together.
         </motion.h2>
         <motion.a
-          href="mailto:your@email.com"
+          href="mailto:uhsaantae@gmail.com"
           className="contact-email"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          your@email.com
+          uhsaantae@gmail.com
         </motion.a>
         <motion.div
           className="contact-links"
@@ -42,7 +42,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
           <a href="https://github.com/TaeDaDev" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/asante-boler-4356aa360/" target="_blank" rel="noreferrer">LinkedIn</a>
         </motion.div>
       </div>
     </section>

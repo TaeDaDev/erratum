@@ -32,3 +32,9 @@
   color: var(--accent);
   opacity: 0.8;
 }
+
+@media (max-width: 600px) {
+  .about {
+    padding: 6rem 1.5rem;
+  }
+}
