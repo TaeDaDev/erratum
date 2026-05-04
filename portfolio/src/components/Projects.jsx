@@ -38,15 +38,15 @@ export default function Projects() {
                 coneSpread={25}
                 edgeSensitivity={30}
               >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-card"
-                >
+                <div className="project-card">
                   <div className="project-card-top">
                     <h3>{project.name}</h3>
-                    <span className="project-arrow">↗</span>
+                    <div className="project-card-links">
+                      {project.live && (
+                        <a href={project.live} target="_blank" rel="noreferrer" className="project-link">Live ↗</a>
+                      )}
+                      <a href={project.link} target="_blank" rel="noreferrer" className="project-link">GitHub ↗</a>
+                    </div>
                   </div>
                   <p>{project.description}</p>
                   <div className="project-tags">
@@ -54,7 +54,7 @@ export default function Projects() {
                       <span key={tag} className="project-tag">{tag}</span>
                     ))}
                   </div>
-                </a>
+                </div>
               </BorderGlow>
             </motion.div>
           ))}

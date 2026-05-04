@@ -24,7 +24,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          Let's work together.
+          Got something to build?
         </motion.h2>
         <motion.a
           href="mailto:uhsaantae@gmail.com"
