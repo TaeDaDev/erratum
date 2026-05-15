@@ -27,7 +27,7 @@ export const projects = [
       "A portfolio built by someone who learned to code because their brain needed a break. React • Three.js • too much anime • not enough sleep. Welcome to my corner of the internet.",
     tags: ["React", "CSS", "Motion", "Vite"],
     link: "https://github.com/TaeDaDev/erratum",
-    live: "https://erratum-one.vercel.app",
+    live: null,
   },
 ];
 
