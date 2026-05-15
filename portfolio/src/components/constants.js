@@ -11,7 +11,7 @@ export const projects = [
       "A responsive React weather dashboard that fetches real-time data from the OpenWeather API — supports city search, 5-day forecasts, dark mode, and Celsius/Fahrenheit toggling.",
     tags: ["React", "Vite"],
     link: "https://github.com/TaeDaDev/React-Weather-app",
-    live: null,
+    live: "https://react-weather-app-1-sable.vercel.app",
   },
   {
     name: "Job Tracker",
@@ -19,7 +19,7 @@ export const projects = [
       "A simple Job Tracker app that helps users manage their job applications. Users can create an account, log in, and CRUD job applications they're applying to.",
     tags: ["Node.js", "React", "Vite"],
     link: "https://github.com/TaeDaDev/Job-Tracker",
-    live: null,
+    live: "https://job-tracker-1-sable.vercel.app",
   },
   {
     name: "Portfolio",
