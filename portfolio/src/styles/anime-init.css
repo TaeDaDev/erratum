@@ -1,0 +1,15 @@
+/* Pre-animation hidden state — anime.js reveals these */
+.hero-text h1 .char,
+.hero-line,
+.hero-text p,
+.navbar-name,
+.navbar-links li,
+.section-label,
+.about-bio,
+.about-skills .skill-tag,
+.projects-grid > div,
+.contact-heading,
+.contact-email,
+.contact-links {
+  opacity: 0;
+}

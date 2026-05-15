@@ -1,37 +1,42 @@
-import { motion } from 'motion/react'
-import { useInView } from 'motion/react'
 import { useRef } from 'react'
-import { projects } from './constants'
+import { createTimeline, stagger } from 'animejs'
+import { useAnimeInView } from '../hooks/useAnimeInView'
+import { projects } from '../constants'
 import BorderGlow from './BorderGlow'
 import '../styles/Projects.css'
 
 export default function Projects() {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
+
+  useAnimeInView(ref, (el) => {
+    const tl = createTimeline({ ease: 'outExpo' })
+
+    tl.add(el.querySelector('.section-label'), {
+      letterSpacing: ['12px', '3px'],
+      opacity: [0, 0.35],
+      duration: 700,
+    })
+    // Cards tilt in — rotate straightens as they rise
+    .add(el.querySelectorAll('.projects-grid > div'), {
+      translateY: [70, 0],
+      rotate: [4, 0],
+      opacity: [0, 1],
+      duration: 900,
+      delay: stagger(150),
+    }, '+=100')
+  })
 
   return (
     <section id="projects" className="projects" ref={ref}>
       <div className="projects-inner">
-        <motion.span
-          className="section-label"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          Projects
-        </motion.span>
+        <span className="section-label">Projects</span>
         <div className="projects-grid">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            >
+          {projects.map((project) => (
+            <div key={project.name}>
               <BorderGlow
-                backgroundColor="#1A1A1B"
-                glowColor="142 70 65"
-                colors={['#4ADE80', '#22c55e', '#86efac']}
+                backgroundColor="#1A1714"
+                glowColor="201 168 76"
+                colors={['#C9A84C', '#E8C96A', '#D4AF37']}
                 borderRadius={4}
                 glowRadius={40}
                 glowIntensity={0.8}
@@ -56,7 +61,7 @@ export default function Projects() {
                   </div>
                 </div>
               </BorderGlow>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

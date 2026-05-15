@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react'
-import { navLinks } from './constants'
+import { useState, useEffect, useRef } from 'react'
+import { createTimeline, stagger } from 'animejs'
+import { navLinks } from '../constants'
 import '../styles/Navbar.css'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('')
+  const nameRef = useRef(null)
+  const linksRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -26,10 +29,21 @@ export default function Navbar() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const tl = createTimeline({ ease: 'outExpo' })
+    tl.add(nameRef.current, { translateY: [-16, 0], opacity: [0, 1], duration: 600 })
+      .add(
+        linksRef.current.querySelectorAll('li'),
+        { translateY: [-16, 0], opacity: [0, 1], duration: 600, delay: stagger(80) },
+        '-=500'
+      )
+    return () => tl.pause()
+  }, [])
+
   return (
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
-      <a href="#hero" className="navbar-name">Asante Boler</a>
-      <ul className="navbar-links">
+      <a href="#hero" className="navbar-name" ref={nameRef}>Asante Boler</a>
+      <ul className="navbar-links" ref={linksRef}>
         {navLinks.map((link) => (
           <li key={link.id}>
             <a

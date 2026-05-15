@@ -1,6 +1,6 @@
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
-import './LineWaves.css';
+import '../styles/LineWaves.css';
 
 function hexToVec3(hex) {
   const h = hex.replace('#', '');
