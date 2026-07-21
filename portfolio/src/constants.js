@@ -29,6 +29,14 @@ export const projects = [
     link: "https://github.com/TaeDaDev/erratum",
     live: null,
   },
+  {
+    name: "Repo Tracker",
+    description:
+      "A simple app that tracks GitHub repositories. Users can search for a repository and view its details, including the number of stars, forks, and open issues.",
+    tags: ["React", "Vite", "Typescript"],
+    link: "https://github.com/TaeDaDev/Repo-Finder",
+    live: "https://client-ten-phi-29.vercel.app/",
+  },
 ];
 
 export const about = {
