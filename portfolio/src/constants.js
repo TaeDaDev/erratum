@@ -22,12 +22,12 @@ export const projects = [
     live: "https://job-tracker-1-sable.vercel.app",
   },
   {
-    name: "Portfolio",
+    name: "Roastly",
     description:
-      "A portfolio built by someone who learned to code because their brain needed a break. React • Three.js • too much anime • not enough sleep. Welcome to my corner of the internet.",
-    tags: ["React", "CSS", "Motion", "Vite"],
-    link: "https://github.com/TaeDaDev/erratum",
-    live: null,
+      "A VS Code extension that roasts your code with an LLM instead of sugarcoating it. Built for code review feedback that's actually fun to read.",
+    tags: ["TypeScript", "LangChain", "Claude API", "VS Code Extension"],
+    link: "https://github.com/TaeDaDev/roastly",
+    live: "https://marketplace.visualstudio.com/items?itemName=AsanteBoler.roastly",
   },
   {
     name: "Repo Tracker",
@@ -41,5 +41,5 @@ export const projects = [
 
 export const about = {
   bio: `Built my first app because I had a problem and nobody solved it the way I wanted. Now I work with React and Three.js, ship things that actually work, and watch too much anime while doing it.`,
-  skills: ["JavaScript", "React", "Three.js", "Node.js", "Express.js", "SQLite3", "CSS", "HTML"],
+  skills: ["JavaScript", "Langchain", "TypeScript", "React", "Three.js", "Node.js", "Express.js", "SQLite3", "CSS", "HTML"],
 };
