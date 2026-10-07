@@ -1,5 +1,6 @@
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
+import { prefersReducedMotion } from '../utils/motion';
 import '../styles/LineWaves.css';
 
 function hexToVec3(hex) {
@@ -150,6 +151,8 @@ export default function LineWaves({
   useEffect(() => {
     if (!containerRef.current) return;
     const container = containerRef.current;
+    // Reduced motion: draw one still frame instead of looping
+    const reduceMotion = prefersReducedMotion();
     const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
@@ -174,6 +177,7 @@ export default function LineWaves({
       renderer.setSize(container.offsetWidth, container.offsetHeight);
       if (program) {
         program.uniforms.uResolution.value = [gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height];
+        if (reduceMotion) renderer.render({ scene: mesh });
       }
     }
     window.addEventListener('resize', resize);
@@ -207,7 +211,7 @@ export default function LineWaves({
     const mesh = new Mesh(gl, { geometry, program });
     container.appendChild(gl.canvas);
 
-    if (enableMouseInteraction) {
+    if (enableMouseInteraction && !reduceMotion) {
       gl.canvas.addEventListener('mousemove', handleMouseMove);
       gl.canvas.addEventListener('mouseleave', handleMouseLeave);
     }
@@ -215,7 +219,7 @@ export default function LineWaves({
     let animationFrameId;
 
     function update(time) {
-      animationFrameId = requestAnimationFrame(update);
+      if (!reduceMotion) animationFrameId = requestAnimationFrame(update);
       program.uniforms.uTime.value = time * 0.001;
 
       if (enableMouseInteraction) {
@@ -230,7 +234,8 @@ export default function LineWaves({
 
       renderer.render({ scene: mesh });
     }
-    animationFrameId = requestAnimationFrame(update);
+    if (reduceMotion) update(4000);
+    else animationFrameId = requestAnimationFrame(update);
 
     return () => {
       cancelAnimationFrame(animationFrameId);

@@ -8,6 +8,7 @@
 }
 
 /* Hero */
+
 .hero {
   position: relative;
   height: 100vh;
@@ -34,6 +35,13 @@
   width: 0;
   margin-top: 1rem;
   opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line {
+    width: 80px;
+    opacity: 1;
+  }
 }
 
 .hero-text h1 {
@@ -78,7 +86,7 @@
 }
 
 .footer a:hover {
-  opacity: 2;
+  color: var(--accent);
 }
 
 @media (max-width: 600px) {

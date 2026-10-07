@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
+import { prefersReducedMotion } from '../utils/motion'
 
 export function useAnimeInView(ref, animateFn, options = {}) {
   useEffect(() => {
     const el = ref.current
-    if (!el) return
+    if (!el || prefersReducedMotion()) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

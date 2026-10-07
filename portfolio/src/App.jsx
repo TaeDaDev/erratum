@@ -9,6 +9,9 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import TextType from './components/TextType'
+import RoastDemo from './components/RoastDemo'
+import { heroTaglines } from './constants'
+import { prefersReducedMotion } from './utils/motion'
 
 const NAME = 'Asante Boler'
 
@@ -18,6 +21,7 @@ function App() {
   const taglineRef = useRef(null)
 
   useEffect(() => {
+    if (prefersReducedMotion()) return
     const tl = createTimeline({ ease: 'outExpo' })
 
     // Chars drop in from above with scale — big dramatic entrance
@@ -57,20 +61,25 @@ function App() {
             </h1>
             <span className="hero-line" ref={lineRef} />
             <p ref={taglineRef}>
-              <TextType
-                text={['Creative Developer', 'React Enthusiast', 'Full Stack Builder']}
-                typingSpeed={75}
-                deletingSpeed={40}
-                pauseDuration={2000}
-                showCursor
-                cursorCharacter="_"
-                cursorBlinkDuration={0.5}
-              />
+              {prefersReducedMotion() ? (
+                <span>{heroTaglines[0]}</span>
+              ) : (
+                <TextType
+                  text={heroTaglines}
+                  typingSpeed={75}
+                  deletingSpeed={40}
+                  pauseDuration={2000}
+                  showCursor
+                  cursorCharacter="_"
+                  cursorBlinkDuration={0.5}
+                />
+              )}
             </p>
           </div>
         </section>
         <About />
         <Projects />
+        <RoastDemo />
         <Contact />
       </main>
       <footer className="footer">

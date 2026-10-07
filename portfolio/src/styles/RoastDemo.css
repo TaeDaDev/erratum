@@ -1,0 +1,218 @@
+.roast {
+  padding: 8rem 4rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.roast-inner {
+  max-width: 1000px;
+}
+
+.roast-intro {
+  margin: 1rem 0 2.5rem;
+  max-width: 640px;
+}
+
+.roast-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.roast-intro p {
+  line-height: 1.7;
+  opacity: 0.65;
+}
+
+.roast-intro a {
+  color: var(--accent);
+}
+
+.roast-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.roast-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.roast-form textarea {
+  width: 100%;
+  min-height: 300px;
+  resize: vertical;
+  background: #141210;
+  color: var(--text);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 4px;
+  padding: 1.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+.roast-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.roast-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roast-count {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  opacity: 0.35;
+}
+
+.roast-form button {
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.roast-form button:hover:not(:disabled) {
+  background: var(--gold-bright);
+}
+
+.roast-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.roast-output {
+  background: #1A1714;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.5rem;
+  min-height: 300px;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.roast-placeholder {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.45;
+}
+
+.roast-error {
+  color: #E8836A;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .roast-pulse {
+    animation: roast-pulse 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes roast-pulse {
+  50% { opacity: 0.15; }
+}
+
+.roast-score {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.roast-score-num {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.roast-score-label {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.roast-verdict {
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.roast-findings {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.roast-findings li {
+  border-left: 1px solid rgba(201, 168, 76, 0.35);
+  padding-left: 1rem;
+}
+
+.roast-sev {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.roast-sev--critical { color: #E8836A; }
+.roast-sev--high { color: #E8A86A; }
+.roast-sev--medium { color: var(--gold-bright); }
+.roast-sev--low { color: var(--silver); }
+
+.roast-line {
+  font-style: italic;
+  margin: 0.35rem 0;
+  line-height: 1.6;
+}
+
+.roast-fix {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.6;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  .roast-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .roast-output {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .roast {
+    padding: 6rem 1.5rem;
+  }
+}
