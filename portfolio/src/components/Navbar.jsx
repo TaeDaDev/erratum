@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { createTimeline, stagger } from 'animejs'
 import { navLinks } from '../constants'
+import { prefersReducedMotion } from '../utils/motion'
 import '../styles/Navbar.css'
 
 export default function Navbar() {
@@ -30,6 +31,7 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
+    if (prefersReducedMotion()) return
     const tl = createTimeline({ ease: 'outExpo' })
     tl.add(nameRef.current, { translateY: [-16, 0], opacity: [0, 1], duration: 600 })
       .add(

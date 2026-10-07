@@ -1,15 +1,19 @@
-/* Pre-animation hidden state — anime.js reveals these */
-.hero-text h1 .char,
-.hero-line,
-.hero-text p,
-.navbar-name,
-.navbar-links li,
-.section-label,
-.about-bio,
-.about-skills .skill-tag,
-.projects-grid > div,
-.contact-heading,
-.contact-email,
-.contact-links {
-  opacity: 0;
+/* Pre-animation hidden state — anime.js reveals these.
+   Skipped entirely for reduced-motion users so content is visible without JS animation. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-text h1 .char,
+  .hero-line,
+  .hero-text p,
+  .navbar-name,
+  .navbar-links li,
+  .section-label,
+  .about-bio,
+  .about-skills .skill-tag,
+  .projects-grid > div,
+  .contact-heading,
+  .contact-email,
+  .contact-links,
+  .roast-demo {
+    opacity: 0;
+  }
 }
